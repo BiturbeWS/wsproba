@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="Questions.xsl"?>
+<!DOCTYPE QUESTIONS SYSTEM "Questions.dtd">
+<GALDERAK>
+	<GALDERA EGILEA="rosa.arruabarrena@ehu.eus" GAIA="Mikologia">
+		<GALDERARENTESTUA> 
+			<p>Zein Amanita da jangarria?</p>
+		</GALDERARENTESTUA>
+		<ZUZENA>
+			<value>Caesarea</value>
+		</ZUZENA>
+		<OKERRAK>
+			<value>Phalloides</value>
+			<value>Muscaria</value>
+			<value>Virosa</value>
+		</OKERRAK>
+	</GALDERA>
+	<GALDERA EGILEA="vadillo@ehu.es" GAIA="Mikologia">
+		<GALDERARENTESTUA> 
+			<p>Tripakiek zer dute kapela azpian?</p>
+		</GALDERARENTESTUA>
+		<ZUZENA>
+			<value>Eztenak</value>
+		</ZUZENA>
+		<OKERRAK>
+			<value>Filamenduak</value>
+			<value>Himenioa</value>
+			<value>Hodiak</value>
+		</OKERRAK>
+	</GALDERA>
+	<GALDERA EGILEA="mafalda001@ikasle.ehu.eus" GAIA="Mikologia">
+		<GALDERARENTESTUA>
+			<p>Eranztuna du</p>
+		</GALDERARENTESTUA>
+		<ZUZENA>
+			<value>Galanpernak</value>
+		</ZUZENA>
+		<OKERRAK>
+			<value>Gibel urdinak</value>
+			<value>Esnegorriak</value>
+			<value>Errotariak</value>
+		</OKERRAK>
+	</GALDERA>
+<GALDERA EGILEA="eposta@ehu.eus" GAIA="b"><GALDERATESTUA>&#xF1;kjb&#xF1;kbh&#xF1;lhb</GALDERATESTUA><ZUZENA><value>a</value></ZUZENA><OKERRAK><value>b</value><value>b</value><value>b</value></OKERRAK></GALDERA><GALDERA EGILEA="eposta@ehu.eus" GAIA="lajhhbb"><GALDERATESTUA>asidfksjadfpjk&#xF1;fbsa&#xF1;</GALDERATESTUA><ZUZENA><value>a</value></ZUZENA><OKERRAK><value>b</value><value>b</value><value>b</value></OKERRAK></GALDERA><GALDERA EGILEA="eposta@ehu.eus" GAIA="lajhhbb"><GALDERATESTUA>asidfksjadfpjk&#xF1;fbsa&#xF1;</GALDERATESTUA><ZUZENA><value>a</value></ZUZENA><OKERRAK><value>b</value><value>b</value><value>b</value></OKERRAK></GALDERA><GALDERA EGILEA="eposta@ehu.eus" GAIA="lajhhbb"><GALDERATESTUA>asidfksjadfpjk&#xF1;fbsa&#xF1;</GALDERATESTUA><ZUZENA><value>a</value></ZUZENA><OKERRAK><value>b</value><value>b</value><value>b</value></OKERRAK></GALDERA><GALDERA EGILEA="eposta@ehu.eus" GAIA="lajhhbb"><GALDERATESTUA>asidfksjadfpjk&#xF1;fbsa&#xF1;</GALDERATESTUA><ZUZENA><value>a</value></ZUZENA><OKERRAK><value>b</value><value>b</value><value>b</value></OKERRAK></GALDERA><GALDERA EGILEA="eposta@ehu.eus" GAIA="kjasdfn"><GALDERATESTUA>jahfvosfldvs</GALDERATESTUA><ZUZENA><value>a</value></ZUZENA><OKERRAK><value>b</value><value>b</value><value>b</value></OKERRAK></GALDERA></GALDERAK>
