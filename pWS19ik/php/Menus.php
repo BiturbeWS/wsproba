@@ -17,13 +17,15 @@
 	 echo '<span><a href= "Credits.php">Kredituak</a></span>';
 }else{
 	echo '<span> Zure Erabiltzailea: <br><font color="green">'.$_GET["eErabiltzailePosta"].'</font></span>';
+	$pieces = explode("@", $_GET['eErabiltzailePosta']);					
+	echo '<img src="../images/'.$pieces[0].'.png" width="50">';
 	echo '<br>';
 	echo '<br>';
 	echo '<span><a href= "Layout.php?'.$_SERVER['QUERY_STRING'].'">Hasiera</a></span>';
 	echo '<span><a href= "QuestionFormWithImage.php?'.$_SERVER['QUERY_STRING'].'">Galdera gehitu</a></span>';
 	echo '<span><a href= "ShowQuestionsWithImage.php?'.$_SERVER['QUERY_STRING'].'">Galderak</a></span>';
 	echo '<span><a href= "Credits.php?'.$_SERVER['QUERY_STRING'].'">Kredituak</a></span>';
-	echo '<span><a href= "../xml/Questions.xml?'.$_SERVER['QUERY_STRING'].'">Questions.xml ikuskatu</a></span>';
+	echo'<span><a href="IkuskatuQuestionsXml.php?'.$_SERVER['QUERY_STRING'].'">Ikusi XML galderak</a></span>';
 }
 ?>
 </nav>

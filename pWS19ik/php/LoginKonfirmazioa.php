@@ -9,17 +9,21 @@
   <section class="main" id="s1">
   
 	<?php
-		$eposta = $_GET['eErabiltzailePosta'];
-		$esteka = mysqli_connect ($zerbitzaria, $erabiltzailea, $gakoa, $db) or die ("Errorea Dbra konektatzerakoan");
-		$sql = "SELECT Pasahitza FROM Users WHERE Eposta = '$eposta'";
-		echo $eposta;
 		
-		$ema = mysqli_query($esteka ,$sql);
-		$pass = mysqli_fetch_assoc($ema);
-		if($pass['Pasahitza'] == $_GET['ePass']){
-			header('Location: Layout.php?'.$_SERVER['QUERY_STRING']);
+		if((strcmp($_GET["eErabiltzailePosta"],"")>0) && (strcmp($_GET["ePass"],"")>0)){
+			$eposta = $_GET['eErabiltzailePosta'];
+			$esteka = mysqli_connect ($zerbitzaria, $erabiltzailea, $gakoa, $db) or die ("Errorea Dbra konektatzerakoan");
+			$sql = "SELECT Pasahitza FROM Users WHERE Eposta = '$eposta'";
+			
+			$ema = mysqli_query($esteka ,$sql);
+			$pass = mysqli_fetch_assoc($ema);
+			if($pass['Pasahitza'] == $_GET['ePass']){
+				header('Location: Layout.php?eErabiltzailePosta='.$_GET[eErabiltzailePosta]);
+			}else{
+				echo "<script> alert('Eposta edo Pasahitza ez da zuzena.'); window.location.href='Login.php'; </script>";
+			}
 		}else{
-			header('Location: Login.php');
+			echo "<script> alert('Eposta edota pasahitza falta da.'); window.location.href='Login.php'; </script>";
 		}
 	?>
   </section>

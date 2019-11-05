@@ -13,7 +13,7 @@
     $regex_irakas1 = "/^[a-z][a-z][a-z]+@ehu\.(eus|es)$/";
     $regex_irakas2 = "/^[a-z][a-z][a-z]+\.[a-z]+@ehu\.(eus|es)$/";
 	
- //   if (isset($_POST["eposta"]) && isset($_POST["galderarenTestua"]) && isset($_POST["eZuzena"]) && isset($_POST["eOkerra1"]) && isset($_POST["eOkerra2"]) && isset($_POST["eOkerra3"]) && isset($_POST["zailtasuna"]) && isset($_POST["gGaia"]) && isset($_POST["fileToUpload"])) {
+    if (isset($_POST["eposta"]) && isset($_POST["galderarenTestua"]) && isset($_POST["eZuzena"]) && isset($_POST["eOkerra1"]) && isset($_POST["eOkerra2"]) && isset($_POST["eOkerra3"]) && isset($_POST["zailtasuna"]) && isset($_POST["gGaia"])) {
  
       if(preg_match($regex_ikas, $_POST["eposta"]) || preg_match($regex_irakas1,$_POST["eposta"]) || preg_match($regex_irakas2 ,  $_POST["eposta"]) ){
 
@@ -81,7 +81,8 @@
 								$galdera = $xml->addChild('GALDERA');
 								$galdera->addAttribute('EGILEA',$_POST["eposta"]);
 								$galdera->addAttribute('GAIA',$_POST["gGaia"]);
-								$galdera->addChild('GALDERATESTUA',$_POST["galderarenTestua"]);
+								$galderentestua = $galdera -> addChild('GALDERATESTUA');
+								$galderentestua->addChild('p',$_POST["galderarenTestua"]);
 								$erantzunZuzenak = $galdera->addChild('ZUZENA');
 								$erantzunZuzenak->addChild('value',$_POST["eZuzena"]);
 								$erantzunOkerrak =$galdera->addChild('OKERRAK');
@@ -106,9 +107,9 @@
         echo "Eposta ez da zuzena.";
 
         }
-  // }else{
-  //  echo "Arazoak daude GET mezuekin";
-   //}
+   }else{
+    echo "Arazoak daude POST mezuekin";
+   }
 
 /*
     	$galderarenTestua = $_GET['galderarenTestua'];
