@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="Questions.xsl"?>
+<!DOCTYPE QUESTIONS SYSTEM "Questions.dtd">
+<GALDERAK>
+	<GALDERA EGILEA="rosa.arruabarrena@ehu.eus" GAIA="Mikologia">
+		<GALDERARENTESTUA> 
+			<p>Zein Amanita da jangarria?</p>
+		</GALDERARENTESTUA>
+		<ZUZENA>
+			<value>Caesarea</value>
+		</ZUZENA>
+		<okerrak>
+			<value>Phalloides</value>
+			<value>Muscaria</value>
+			<value>Virosa</value>
+		</okerrak>
+	</GALDERA>
+	<GALDERA EGILEA="vadillo@ehu.es" GAIA="Mikologia">
+		<GALDERARENTESTUA> 
+			<p>Tripakiek zer dute kapela azpian?</p>
+		</GALDERARENTESTUA>
+		<ZUZENA>
+			<value>Eztenak</value>
+		</ZUZENA>
+		<okerrak>
+			<value>Filamenduak</value>
+			<value>Himenioa</value>
+			<value>Hodiak</value>
+		</okerrak>
+	</GALDERA>
+	<GALDERA EGILEA="mafalda001@ikasle.ehu.eus" GAIA="Mikologia">
+		<GALDERARENTESTUA>
+			<p>Eranztuna du</p>
+		</GALDERARENTESTUA>
+		<ZUZENA>
+			<value>Galanpernak</value>
+		</ZUZENA>
+		<okerrak>
+			<value>Gibel urdinak</value>
+			<value>Esnegorriak</value>
+			<value>Errotariak</value>
+		</okerrak>
+	</GALDERA>
+<GALDERA EGILEA="edozein002@ikasle.ehu.eus" GAIA="baia"><GALDERATESTUA><p>Batetik hamarrerako testua</p></GALDERATESTUA><ZUZENA><value>Bai</value></ZUZENA><OKERRAK><value>Ez</value><value>Ez</value><value>Ez</value></OKERRAK><ARGAZKIA>../images/AddCashGUI1.jpg</ARGAZKIA></GALDERA></GALDERAK>
