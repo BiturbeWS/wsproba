@@ -33,7 +33,7 @@
 				foreach ($konexioa->query('SELECT eposta, Pasahitza FROM users') as $row){
 					if (!(strcmp($row['eposta'],$_POST["eposta"]))) {
 						if(!(strcmp($row['Pasahitza'],$_POST["pasahitza"]))){
-							$URL = "http://localhost:123/pWS19ikmigratua/php/Layout.php?eposta=".$_POST["eposta"];
+							$URL = "http://localhost:8080/pWS19ikmigratua/php/Layout.php?eposta=".$_POST["eposta"];
 							echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
 							exit();
 						}

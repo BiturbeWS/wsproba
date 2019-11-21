@@ -81,7 +81,7 @@
 								$galdera = $xml->addChild('GALDERA');
 								$galdera->addAttribute('EGILEA',$_POST["eposta"]);
 								$galdera->addAttribute('GAIA',$_POST["gaia"]);
-								$galderentestua = $galdera -> addChild('GALDERATESTUA');
+								$galderentestua = $galdera -> addChild('GALDERARENTESTUA');
 								$galderentestua->addChild('p',$_POST["galdera"]);
 								$erantzunZuzenak = $galdera->addChild('ZUZENA');
 								$erantzunZuzenak->addChild('value',$_POST["zuzena"]);

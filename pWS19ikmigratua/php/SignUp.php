@@ -2,20 +2,23 @@
 <html>
 <head>
 	<?php include '../html/Head.html'?>
+	<script src="../js/VerifyMatricula.js"></script>
 </head>
 <body>
 	<?php include '../php/Menus.php' ?>
 	<section class="main" id="s1">
 		<div align="left">
 			<form id="erregistro" name="erregistro" action="AddSignUp.php" method="post" enctype="multipart/form-data">
-				Eposta(*): <input type="text" id="eposta" name="eposta" size="80"></input><br>
+				Eposta(*): <input type="text" id="eposta" name="eposta" size="80" onchange="VerifyMail();" ></input>
+				<div id= "baietz"></div>
 				Erabiltzaile mota(*): <input type="Radio" id="ikasle" name="mota" value=1> Ikasle</input>
 				<input type="Radio" id="irakasle" name="mota" value=2> Irakasle </input><br>
 				Deiturak(*): <input type="text" id="deiturak" name="deiturak" size="80" pattern="[a-zA-Z]{2,}( [a-zA-Z]{2,}){1,}"></input></br>
-				Pasahitza(*): <input type="password" id="pasahitza1" name="pasahitza1" size="80"></input><br>
+				Pasahitza(*): <input type="password" id="pasahitza1" name="pasahitza1" size="80" onchange="VerifyPass();"></input>
+				<div id= "baita"></div>
 				Berriro pasahitza(*): <input type="password" id="pasahitza2" name="pasahitza2" size="80"></input><br>
 				Irudia:<br><input type="file" id="irudia" name="irudia" accept="image/png,image/jpg,image/jpeg" onchange="erakutsi(this)"></input><br>
-				<input type="submit" id="submit" value=" Bidali "></input>
+				<input type="submit" id="submit" value=" Bidali " ></input>
 				<input type="reset" id="ezabatu" value=" Ezabatu " onclick="kenduirudia()"></input><br>
 			</form>
 		</div>
@@ -23,6 +26,8 @@
 	<?php include '../html/Footer.html' ?>
 	<script src="../js/jquery-3.4.1.min.js"></script>
 	<script>
+//		setTimeout(goodForm, 1000);
+$("#submit").prop('disabled', true);
 		function erakutsi(input) {
 			if (input.files[0]) {
 				var irakurle = new FileReader();
