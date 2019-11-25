@@ -63,7 +63,7 @@
 				foreach ($konexioa->query('SELECT eposta FROM users') as $row){
 					if (!(strcmp($row['eposta'],$_POST["eposta"]))){
 						echo("<p>Korreoa erregistratuta dago</p>");
-						echo("<p><a href='SingUp.php'>Saiatu berriro</a></p>");
+						echo("<p><a href='SignUp.php'>Saiatu berriro</a></p>");
 						exit();
 					}		
 				}
@@ -89,8 +89,8 @@
 				copy($non, $helburua);
 			}
 			
-			$sql = "INSERT INTO users (Eposta,ErabiltzaileMota,Deitura,Pasahitza,argazkia) VALUES
-			('$_POST[eposta]' , ' $_POST[mota]', '$_POST[deiturak]','$_POST[pasahitza1]','$helburua')";
+			$sql = "INSERT INTO users (Eposta,ErabiltzaileMota,Deitura,Pasahitza,argazkia,egoera) VALUES
+			('$_POST[eposta]' , ' $_POST[mota]', '$_POST[deiturak]','$_POST[pasahitza1]','$helburua','Onartu')";
               	
 			$ema=@mysqli_query($konexioa,$sql);
 			

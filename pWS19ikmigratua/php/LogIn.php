@@ -30,12 +30,22 @@
 				exit();
 			}
 			else{
-				foreach ($konexioa->query('SELECT eposta, Pasahitza FROM users') as $row){
-					if (!(strcmp($row['eposta'],$_POST["eposta"]))) {
+				foreach ($konexioa->query('SELECT eposta, Pasahitza, egoera FROM users') as $row){
+					$geteposta = $_POST["eposta"];
+					if (!(strcmp($row['eposta'],$geteposta))) {
 						if(!(strcmp($row['Pasahitza'],$_POST["pasahitza"]))){
-							$URL = "http://localhost:8080/pWS19ikmigratua/php/Layout.php?eposta=".$_POST["eposta"];
-							echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
-							exit();
+							if(!(strcmp($row['egoera'],'Onartu'))){
+								$_SESSION['eposta'] = $geteposta;
+								$URL = "http://localhost:123/pWS19ikmigratua/php/Layout.php;";
+								echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
+								exit();
+							}
+							?>
+							<script>
+								var gaizki = $("<p id='gaizki'>Kontua blokeatua dago.</p>");
+								gaizki.appendTo("#s1");
+							</script>
+				<?php
 						}
 					}		
 				}

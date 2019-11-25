@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html id = '123'>
 <head>
   <?php include '../html/Head.html'?>
   <?php include 'DbConfig.php'?>
@@ -11,12 +11,17 @@
 <body>
   <?php include '../php/Menus.php' ?>
 	<?php	
-		if(isset($_GET["eposta"])){
+		if(isset($_SESSION['eposta'])){
 	?>
 			<script>erakutsiLogeatuta();</script>
 	<?php
+		}else{
+			$URL = "http://localhost:123/pWS19ikmigratua/php/Layout.php;";
+		echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
+		exit();
 		}
 	?>
+	
   <section class="main" id="s1">
   	<form id="galderenF" name="galderenF" method="post" enctype="multipart/form-data">
     <div>
@@ -39,10 +44,10 @@
     Galderaren gaia:
     <input type="text" name="gaia" id="gaia"><br>
 	Galdera egilearen eposta:
-	<?php if(!isset($_GET["eposta"])){
+	<?php if(!isset($_SESSION['eposta'])){
 			echo '<input type="text" name="eposta" id="eposta"><br>';
 		}else{
-			echo '<input type="text" name="eposta" id="eposta" value="'.$_GET["eposta"].'"><br>';
+			echo '<input type="text" name="eposta" id="eposta" value="'.$_SESSION['eposta'].'"><br>';
 		} 
 	?>
 	<br>

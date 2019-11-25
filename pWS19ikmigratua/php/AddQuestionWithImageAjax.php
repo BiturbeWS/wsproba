@@ -1,5 +1,12 @@
 <?php include '../php/DbConfig.php' ?>
-
+<?php session_start ();?>
+<?php
+	if(!isset($_SESSION['eposta'])){
+		$URL = "http://localhost:123/pWS19ikmigratua/php/Layout.php;";
+		echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
+		exit();
+	}
+	?>
 
 <?php
 			

@@ -4,7 +4,7 @@ require_once('../lib/nusoap.php');
 require_once('../lib/class.wsdlcache.php');
 //soap_server motako objektua sortzen dugu
 
-$ns="http://localhost:8080/pWS19ikmigratua/php/VerifyPassWS.php?wsdl";
+$ns="http://localhost:123/pWS19ikmigratua/php/VerifyPassWS.php?wsdl";
 
 $server= new soap_server;
 $server->configureWSDL('pasahitzErraza',$ns);

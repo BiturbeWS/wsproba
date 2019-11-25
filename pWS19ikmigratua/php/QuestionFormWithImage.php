@@ -10,6 +10,10 @@
 	?>
 			<script>erakutsiLogeatuta();</script>
 	<?php
+		}else{
+			$URL = "http://localhost:123/pWS19ikmigratua/php/Layout.php;";
+			echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
+			exit();
 		}
 	?>
 	<section class="main" id="s1">

@@ -6,7 +6,7 @@
 <body>
 <?php include '../php/Menus.php' ?>
 <?php	
-		if(isset($_GET["eposta"])){
+		if(isset($_SESSION["eposta"])){
 	?>
 			<script>erakutsiLogeatuta();</script>
 	<?php

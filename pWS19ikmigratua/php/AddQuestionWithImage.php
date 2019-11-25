@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +8,14 @@
 	<?php include '../php/Menus.php' ?>
 	<?php include '../php/DbConfig.php' ?>
 	<?php	
-		if(isset($_GET["eposta"])){
+		if(isset($_SESSION["eposta"])){
 	?>
 			<script>erakutsiLogeatuta();</script>
 	<?php
+		}else{
+			$URL = "http://localhost:123/pWS19ikmigratua/php/Layout.php;";
+			echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
+			exit();
 		}
 	?>
 	<section class="main" id="s1">
