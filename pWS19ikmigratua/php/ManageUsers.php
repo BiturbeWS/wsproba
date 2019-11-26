@@ -47,19 +47,21 @@
 				</tr>
 				</thead>
 				<?php 
+				$count = 0;
 				foreach ($konexioa->query('SELECT * FROM users') as $row){ 
 				$eposta = $row['Eposta'];
 				?>
 				<tr>
-					<td><?php echo '<b>'.$row['Eposta'].'</b>'?></td>
+					<td><?php echo '<b id= email'.$count.'>'.$row['Eposta'].'</b>'?></td>
 					<td><?php echo $row['ErabiltzaileMota']?></td>
 					<td><?php echo $row['Pasahitza']?></td>
 					<td><?php echo '<img src="'.$row['argazkia'].'" width="50">'?>
 					<td><?php echo $row['egoera']?></td>
-					<td><?php echo '<button type="button" onclick="proba()">Blokeatu</button>'?></td>
-					<td><?php echo '<button type="button" onclick="EzabatuErabiltzailea('.$eposta.')">Ezabatu</button>'?></td>
+					<td><?php echo '<button type="button" onclick="BlokeatuErabiltzailea('.$count.')">Blokeatu</button>'?></td>
+					<td><?php echo '<button type="button" onclick="EzabatuErabiltzailea('.$count.')">Ezabatu</button>'?></td>
 				</tr>
 				<?php
+				$count = $count + 1;
 				}
 				?>
 				
@@ -69,10 +71,12 @@
 	<?php include '../html/Footer.html' ?>
 	<script type="text/javascript" src="../js/AdminFunctions.js"></script>
 	<script>
-		function proba(){
+		function sumAll() {
 			alert("HEY!");
+			alert(arguments[0]);
+			var email = document.getElementById("email"+arguments[0]).textContent;
+			alert(email);
 		}
-		
 	</script>
 </body>
 </html>
