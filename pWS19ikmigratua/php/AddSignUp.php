@@ -1,3 +1,14 @@
+<?php	
+		if(isset($_SESSION["eposta"])){
+	?>
+			<script>erakutsiLogeatuta();</script>
+	<?php
+		}else{
+			$URL = "http://localhost:123/pWS19ikmigratua/php/Layout.php;";
+			echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';
+			exit();
+		}
+	?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,6 +55,7 @@
 				echo("<p><a href='SignUp.php' id='erreg' >Saiatu berriro</a></p>");
 				exit();
 			}
+			
 			if((strcmp($_POST["pasahitza1"],$_POST["pasahitza2"]))){
 				echo("<p>Pasahitzak desberdinak dira</p>");
 				echo("<p><a href='SignUp.php' id='erreg' >Saiatu berriro</a></p>");
@@ -89,8 +101,10 @@
 				copy($non, $helburua);
 			}
 			
+			$pasen= crypt($_POST['pasahitza1'],'iturbeforon');
+			
 			$sql = "INSERT INTO users (Eposta,ErabiltzaileMota,Deitura,Pasahitza,argazkia,egoera) VALUES
-			('$_POST[eposta]' , ' $_POST[mota]', '$_POST[deiturak]','$_POST[pasahitza1]','$helburua','Onartu')";
+			('$_POST[eposta]' , ' $_POST[mota]', '$_POST[deiturak]','$pasen','$helburua','Onartu')";
               	
 			$ema=@mysqli_query($konexioa,$sql);
 			

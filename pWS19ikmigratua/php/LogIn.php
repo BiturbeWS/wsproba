@@ -33,7 +33,9 @@
 				foreach ($konexioa->query('SELECT eposta, Pasahitza, egoera FROM users') as $row){
 					$geteposta = $_POST["eposta"];
 					if (!(strcmp($row['eposta'],$geteposta))) {
-						if(!(strcmp($row['Pasahitza'],$_POST["pasahitza"]))){
+						$pasen= crypt($_POST['pasahitza'],'iturbeforon');
+						echo $pasen;
+						if(!(strcmp($row['Pasahitza'],$pasen))){
 							if(!(strcmp($row['egoera'],'Onartu'))){
 								$_SESSION['eposta'] = $geteposta;
 								$URL = "http://localhost:123/pWS19ikmigratua/php/Layout.php;";

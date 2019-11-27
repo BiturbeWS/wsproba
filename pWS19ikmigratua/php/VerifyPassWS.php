@@ -18,12 +18,12 @@ if ($ticket != 1010) {
 	return "ZERBITZURIK GABE";
 }else{
 	$good = 1;
-	/*
+	
 	$fn = fopen("../txt/toppasswords.txt","r");
 	  
 	  while(! feof($fn))  {
 		$cmp = fgets($fn);
-	  	if ($cmp == $pass) {
+	  	if (strcmp(trim($cmp),trim($pass)) == 0) {
 			$good = 0;  		
 	  	}
 	  }
@@ -31,15 +31,18 @@ if ($ticket != 1010) {
 	  //echo $cmp;
 
 	  fclose($fn);	
-	  */
-$file_lines = file('../txt/toppasswords.txt');
-foreach ($file_lines as $line) {
-    if (strpos($line,$pass)) {
-			$good = 0;
-			break;  		
-	  	}
-}
-
+	  
+	  
+		/*
+		$file_lines = file('../txt/toppasswords.txt');
+		foreach ($file_lines as $line) {
+		if (strpos($line,$pass)) {
+				$good = 0;
+				break;  		
+			}
+		}
+		*/
+		
 
 	  if ($good == 1) {
 		return "BALIOZKOA";

@@ -41,8 +41,8 @@
 		credits.appendTo("#n1"); 
 		
 		if(geteposta.trim() == "admin@ehu.es"){
-			var manageUsers = $("<span id='manageUsers'><a href='ManageUsers.php' id='manageUsers'>Erabiltzaileak</a></span>");
-			manageUsers.appendTo("#n1"); 
+			var handlingAccounts = $("<span id='handlingAccounts'><a href='HandlingAccounts.php' id='handlingAccounts'>Erabiltzaileak</a></span>");
+			handlingAccounts.appendTo("#n1"); 
 		}else{
 			var galderakAjax = $("<span id='galderaAjax'><a href='HandlingQuizesAjax.php' id='galderakAjax'>GALDERAK AJAX</a></span>");
 			galderakAjax.appendTo("#n1"); 
