@@ -11,7 +11,7 @@
 <body>
   <?php include '../php/Menus.php' ?>
 	<?php	
-		if(isset($_SESSION['eposta'])){
+		if(isset($_SESSION['eposta']) && ($_SESSION['eposta'] != 'admin@ehu.es')){
 	?>
 			<script>erakutsiLogeatuta();</script>
 	<?php
@@ -47,7 +47,7 @@
 	<?php if(!isset($_SESSION['eposta'])){
 			echo '<input type="text" name="eposta" id="eposta"><br>';
 		}else{
-			echo '<input type="text" name="eposta" id="eposta" value="'.$_SESSION['eposta'].'"><br>';
+			echo '<input type="text" name="eposta" id="eposta" value="'.$_SESSION['eposta'].'" readonly><br>';
 		} 
 	?>
 	<br>
@@ -55,7 +55,7 @@
 	<input type="file" name="fileToUpload" id="fileToUpload" accept="image/png,image/jpg,image/jpeg" onchange="erakutsi(this)"></input>
 	<br>
 	</form>
-    <input type="button" value="Galdera Gehitu eta erakutsi" id="ajaxbut" onclick="galgehitu()"/>
+    <input type="button" value="Galdera Gehitu" id="ajaxbut" onclick="galgehitu()"/>
 	<br>
 	<input type="button" value="Taulan erakutsi" id="gBotoia" onclick="taulaIkuskatu()"/>
 	<br>

@@ -1,5 +1,6 @@
 function EzabatuErabiltzailea(){
 		
+		
 		var eposta = document.getElementById("email"+arguments[0]).textContent;
         var data = new FormData();
         data.append('eposta', eposta); 

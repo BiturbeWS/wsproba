@@ -25,8 +25,13 @@
 		$("#hasieraspan").remove();
 		$("#kredituakspan").remove();
 		
+		
+		var pasahitzaAldatu = $("<span id='pasahitzaAldatu' class='right'><a href='PasahitzaBerreskuratu.php' id='pasahitzaAldatu'>Pasahitza aldatu</a>&nbsp</span>");
+		pasahitzaAldatu.appendTo("#h1"); 
+		
 		var logout = $("<span id='logoutspan' class='right'><a href='Logout.php' id='logout'>Logout</a>&nbsp</span>");
 		logout.appendTo("#h1"); 
+		
 		var layout = $("<span id='hasieraspan'><a href='Layout.php' id='hasiera' >Hasiera</a></span>");
 		layout.appendTo("#n1"); 
 		/*
@@ -37,16 +42,27 @@
 		var galderaXML = $("<span id='galderaXML'><a href='QuestionsXMLShow.php?eposta="+geteposta+"' id='gaderaXML'>GALDERAK XML</a></span>");
 		galderaXML.appendTo("#n1"); 
 		*/
-		var credits = $("<span id='kredituakspan2'><a href='Credits.php' id='kredituak'>Kredituak</a></span>");
-		credits.appendTo("#n1"); 
 		
 		if(geteposta.trim() == "admin@ehu.es"){
 			var handlingAccounts = $("<span id='handlingAccounts'><a href='HandlingAccounts.php' id='handlingAccounts'>Erabiltzaileak</a></span>");
 			handlingAccounts.appendTo("#n1"); 
 		}else{
-			var galderakAjax = $("<span id='galderaAjax'><a href='HandlingQuizesAjax.php' id='galderakAjax'>GALDERAK AJAX</a></span>");
-			galderakAjax.appendTo("#n1"); 
+			var jolastera = $("<span id='jolastera'><a href='Jolastera.php' id='jolastera'>Goazen jolastera!</a></span>");
+			jolastera.appendTo("#n1"); 
+			
+			var ranking = $("<span id='ranking'><a href='UserRanking.php' id='ranking'>Erabiltzaile Ranking-a</a></span>");
+			ranking.appendTo("#n1"); 
+			
+			var galderakAjax = $("<span id='galderaAjax'><a href='HandlingQuizesAjax.php' id='galderakAjax'>Galderak (Ajax)</a></span>");
+			galderakAjax.appendTo("#n1");
+			
+			var ShowQuestionsWithImages  = $("<span id='ShowQuestionsWithImages '><a href='ShowQuestionsWithImage.php' id='galderakAjax'>ShowQuestionsWithImages</a></span>");
+			ShowQuestionsWithImages .appendTo("#n1");
+			
 		}
+		
+		var credits = $("<span id='kredituakspan2'><a href='Credits.php' id='kredituak'>Kredituak</a></span>");
+		credits.appendTo("#n1"); 
 		
 		var erabiltzaile = $("<span id='erabiltzaile' class='right'>"+ geteposta +"&nbsp</span>");
 		erabiltzaile.appendTo("#logoutspan");

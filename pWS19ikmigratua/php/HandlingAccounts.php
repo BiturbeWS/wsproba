@@ -13,7 +13,7 @@
 <body>
 	<?php include '../php/Menus.php' ?>
 	<?php	
-		if(isset($_SESSION["eposta"])){
+		if($_SESSION["eposta"]== 'admin@ehu.es'){
 	?>
 			<script>erakutsiLogeatuta();</script>
 	<?php

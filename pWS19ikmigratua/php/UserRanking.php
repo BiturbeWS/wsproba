@@ -26,7 +26,7 @@
 		<div>
 		<?php
 			$konexioa = @mysqli_connect($zerbitzaria, $erabiltzailea, $gakoa, $db) or die ("Errorea: ezin izan da konexioa ezarri");
-			$query = 'SELECT * FROM questions';
+			$query = 'SELECT * FROM users';
 			$ema=@mysqli_query($konexioa,$query);
 			if(!$ema){
 				echo("Errorea: ezin izan da datu basea atzitu");
@@ -34,29 +34,35 @@
 			}
 			
 		?>	
-			<table border="1">
+		
+		<h2>TOP 10 Erabiltzaileak:</h2>
+		<br>
+			<table border="1" width="100%">
 				<tr>
 				<thead>
-					<th width="150px">Identifikazioa</th>  
-					<th width="200px">Posta</th>    
-					<th width="150px">Galdera</th>
-					<th width="150px">Zuzena</th>
-					<th width="150px">Okerra1</th>
-					<th width="150px">Zailtasuna</th>
-					<th width="150px">Gaia</th>
+					<th width="150px">Eposta</th>  
+					<th width="200px">Deitura</th>    
 					<th width="150px">Irudia</th>
+					<th width="150px">Puntuak</th>
 				</tr>
 				</thead>
-				<?php foreach ($konexioa->query('SELECT * FROM questions') as $row){  ?>
-				<tr>
-					<td><?php echo $row['indizea']?></td>
-					<td><?php echo $row['eposta']?></td>
-					<td><?php echo $row['galderarenTestua']?></td>
-					<td><?php echo $row['eZuzena']?></td>
-					<td><?php echo $row['eOkerra1']?></td>
-					<td><?php echo $row['zailtasuna']?></td>
-					<td><?php echo $row['gGaia']?></td>
+				<?php
+				foreach ($konexioa->query('SELECT * FROM users ORDER BY puntuak DESC LIMIT 10') as $row){  
+				
+					if(!(strcmp($row['Eposta'],$_SESSION['eposta']))){
+						?>
+						<tr bgcolor="#008000">
+				<?php
+					}else{
+						?>
+						<tr>
+				<?php
+					}
+				?>
+					<td><?php echo $row['Eposta']?></td>
+					<td><?php echo $row['Deitura']?></td>
 					<td><?php echo '<img src="'.$row['argazkia'].'" width="50">'?></td>
+					<td><?php echo $row['puntuak']?></td>
 				</tr>
 				<?php
 				}

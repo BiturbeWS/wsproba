@@ -26,9 +26,8 @@ function galgehitu(){
 
                 $("#result").text(data);
                 console.log("SUCCESS : ", data);
-                //xmlErakutsi();
-                TaulaIkuskatu();              
-
+                //xmlErakutsi();             
+				//TaulaIkuskatu(); 
             },
             error: function (e) {
 
